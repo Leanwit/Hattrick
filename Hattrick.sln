@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.WebApi", "Hattrick.WebApi\Hattrick.WebApi.csproj", "{E57FD60F-DE70-4AD9-9C6F-9466692E3DB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Manager", "Hattrick.Manager\Hattrick.Manager.csproj", "{95B0F634-DE35-4F17-BCEC-96E8A1EEE013}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Dto", "Hattrick.Dto\Hattrick.Dto.csproj", "{BC29AC2B-452F-400D-A94C-FF45DB309F2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Selenium", "Hattrick.Selenium\Hattrick.Selenium.csproj", "{5372B464-CB45-4750-9235-1A07327E0AF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Repository", "Hattrick.Repository\Hattrick.Repository.csproj", "{1692A06A-C6BB-408C-94C6-FB4377D0C901}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Model", "Hattrick.Model\Hattrick.Model.csproj", "{899731C0-4123-4EFD-9AED-ACA1E371EB44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hattrick.Test", "Hattrick.Test\Hattrick.Test.csproj", "{9E211AA3-0CEC-4722-9D00-E009B61B97DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E57FD60F-DE70-4AD9-9C6F-9466692E3DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E57FD60F-DE70-4AD9-9C6F-9466692E3DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E57FD60F-DE70-4AD9-9C6F-9466692E3DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E57FD60F-DE70-4AD9-9C6F-9466692E3DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B0F634-DE35-4F17-BCEC-96E8A1EEE013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B0F634-DE35-4F17-BCEC-96E8A1EEE013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B0F634-DE35-4F17-BCEC-96E8A1EEE013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B0F634-DE35-4F17-BCEC-96E8A1EEE013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC29AC2B-452F-400D-A94C-FF45DB309F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC29AC2B-452F-400D-A94C-FF45DB309F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC29AC2B-452F-400D-A94C-FF45DB309F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC29AC2B-452F-400D-A94C-FF45DB309F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5372B464-CB45-4750-9235-1A07327E0AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5372B464-CB45-4750-9235-1A07327E0AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5372B464-CB45-4750-9235-1A07327E0AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5372B464-CB45-4750-9235-1A07327E0AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1692A06A-C6BB-408C-94C6-FB4377D0C901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1692A06A-C6BB-408C-94C6-FB4377D0C901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1692A06A-C6BB-408C-94C6-FB4377D0C901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1692A06A-C6BB-408C-94C6-FB4377D0C901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6B09712-0895-4E0F-B8E1-95F3D156AB27}
+	EndGlobalSection
+EndGlobal

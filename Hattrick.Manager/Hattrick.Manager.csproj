@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hattrick.Dto\Hattrick.Dto.csproj" />
+    <ProjectReference Include="..\Hattrick.Model\Hattrick.Model.csproj" />
+    <ProjectReference Include="..\Hattrick.Repository\Hattrick.Repository.csproj" />
+    <ProjectReference Include="..\Hattrick.Selenium\Hattrick.Selenium.csproj" />
+  </ItemGroup>
+
+</Project>
