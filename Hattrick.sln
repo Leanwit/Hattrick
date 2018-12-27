@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Repository", "Hatt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hattrick.Model", "Hattrick.Model\Hattrick.Model.csproj", "{899731C0-4123-4EFD-9AED-ACA1E371EB44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hattrick.Test", "Hattrick.Test\Hattrick.Test.csproj", "{9E211AA3-0CEC-4722-9D00-E009B61B97DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{899731C0-4123-4EFD-9AED-ACA1E371EB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E211AA3-0CEC-4722-9D00-E009B61B97DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
