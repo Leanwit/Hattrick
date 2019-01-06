@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Hattrick.Dto;
 using Hattrick.Manager;
+using Hattrick.Manager.Interfaces;
+using Hattrick.Manager.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hattrick.WebApi.Controllers
@@ -9,18 +11,23 @@ namespace Hattrick.WebApi.Controllers
     [ApiController]
     public class FormationController : ControllerBase
     {
-        private IPlayerManager _manager;
+        private IPlayerManager _playerManager;
+        private IGeneticManager<PlayerDto> _manager;
 
-        public FormationController(IPlayerManager manager)
+        public FormationController(IPlayerManager playerManager, IGeneticManager<PlayerDto> manager)
         {
+            this._playerManager = playerManager;
             this._manager = manager;
         }
-        
+
         // GET
         [HttpGet]
-        public List<PlayerDto> GetBestFormation()
+        public FormationModel GetBestFormation()
         {
-            return this._manager.GetAll().Result;
+            var playersDto = this._playerManager.GetAll().Result;
+
+
+            return this._manager.GetBestFormation(playersDto);  
         }
     }
 }

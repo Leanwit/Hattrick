@@ -20,10 +20,6 @@ namespace Hattrick.Model
             this._configuration = configuration;
         }
 
-        public ModelContext(DbContextOptions options) : base(options)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<Player>().HasMany(s => s.Positions).WithOne(s => s.Player)

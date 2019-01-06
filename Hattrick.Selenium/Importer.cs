@@ -53,17 +53,17 @@ namespace Hattrick.Selenium
                     return players;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            
+
         }
 
 
         private static string GetResourcesPath(string filename = "")
         {
-            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"/Resources/" + filename;
+            return $"{Directory.GetCurrentDirectory()}/Resources/{filename}";
         }
     }
 }

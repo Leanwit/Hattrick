@@ -1,4 +1,6 @@
-﻿using Hattrick.Manager;
+﻿using Hattrick.Dto;
+using Hattrick.Manager;
+using Hattrick.Manager.Interfaces;
 using Hattrick.Model;
 using Hattrick.Repository;
 using Hattrick.Repository.Impl;
@@ -34,6 +36,8 @@ namespace Hattrick.WebApi
 
             services.AddScoped<IAsyncRepository<Player>, PlayerRepository>();
             services.AddScoped<IPlayerManager, PlayerManager>();
+            services.AddScoped<IGeneticManager<PlayerDto>, FormationManager>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
