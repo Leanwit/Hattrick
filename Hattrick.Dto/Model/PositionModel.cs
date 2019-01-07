@@ -15,7 +15,10 @@ namespace Hattrick.Manager.Model
             "Delantero Defensivo", "Defensa Lateral defensivo", "Delantero hacia el lateral", "Delantero", "Arquero"
         };
 
+
+
         public static string Arquero = "Arquero";
+
         public static string DefensaCentralofensivo = "Defensa Central ofensivo";
         public static string DefensaCentral = "Defensa Central";
         public static string DefensaCentralhaciaellateral = "Defensa Central hacia el lateral";
@@ -34,7 +37,39 @@ namespace Hattrick.Manager.Model
         public static string Delantero = "Delantero";
         public static string Delanterohaciaellateral = "Delantero hacia el lateral";
         public static string DelanteroDefensivoTécnico = "Delantero Defensivo Técnico";
-        public static string DelanteroDefensiv = "Delantero Defensivo";
+        public static string DelanteroDefensivo = "Delantero Defensivo";
+
+        internal static List<string> GetSideValues()
+        {
+            return new List<string>() {
+                Lateral,
+                Lateralhaciamedio,
+                LateralDefensivo,
+                LateralOfensivo
+            };
+        }
+
+        internal static List<string> GetMiddfieldValues()
+        {
+            return new List<string>()
+            {
+                MediocampistaOfensivo,
+                Mediocampista,
+                MediocampistaDefensivo,
+                Mediocampistahaciaellateral
+            };
+        }
+
+
+        internal static List<string> GetForwardValues()
+        {
+            return new List<string>() {
+                Delantero,
+                Delanterohaciaellateral,
+                DelanteroDefensivoTécnico,
+                DelanteroDefensivo
+            };
+        }
 
         public static List<string> GetDefenseValues()
         {

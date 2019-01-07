@@ -8,6 +8,7 @@ namespace Hattrick.Manager.Interfaces
         where TEntity : class
     {
         FormationModel GetBestFormation(List<PlayerDto> players);
+        FormationModel GetBestFormationRound(List<PlayerDto> players);
     }
 
 }

@@ -21,13 +21,19 @@ namespace Hattrick.WebApi.Controllers
         }
 
         // GET
-        [HttpGet]
+        [HttpGet("Simple/BestFormation")]
         public FormationModel GetBestFormation()
         {
             var playersDto = this._playerManager.GetAll().Result;
-
-
             return this._manager.GetBestFormation(playersDto);  
+        }
+
+        // GET
+        [HttpGet("Simple/BestFormationRound")]
+        public FormationModel GetBestFormationRound()
+        {
+            var playersDto = this._playerManager.GetAll().Result;
+            return this._manager.GetBestFormationRound(playersDto);
         }
     }
 }
