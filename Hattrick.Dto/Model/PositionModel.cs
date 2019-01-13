@@ -25,7 +25,7 @@ namespace Hattrick.Manager.Model
         public static string DefensaLateralhaciamedio = "Defensa Lateral hacia medio";
         public static string DefensaLateralofensivo = "Defensa Lateral ofensivo";
         public static string DefensaLateral = "Defensa Lateral";
-        public static string DefensaLateraldefensivo = "Defensa Lateral defensivo";
+        public static string DefensaLateralDefensivo = "Defensa Lateral defensivo";
         public static string MediocampistaOfensivo = "Mediocampista Ofensivo";
         public static string Mediocampista = "Mediocampista";
         public static string MediocampistaDefensivo = "Mediocampista Defensivo";
@@ -79,7 +79,7 @@ namespace Hattrick.Manager.Model
                 DefensaCentralhaciaellateral,
                 DefensaLateralofensivo,
                 DefensaLateral,
-                DefensaLateraldefensivo
+                DefensaLateralDefensivo
             };
         }
     }

@@ -11,7 +11,15 @@ using Microsoft.Extensions.Configuration;
 
 namespace Hattrick.Manager
 {
-    public class FormationManager : IGeneticManager<PlayerDto>
+    public interface IFormationManager<TEntity>
+        where TEntity : class
+    {
+        FormationModel GetBestFormation(List<PlayerDto> players);
+        FormationModel GetBestFormationRound(List<PlayerDto> players);
+        FormationModel GetormationRandom(List<PlayerDto> players);
+    }
+
+    public class FormationManager : IFormationManager<PlayerDto>
     {
         private readonly IConfiguration _configuration;
         private readonly IAsyncRepository<Player> _repository;
@@ -32,15 +40,42 @@ namespace Hattrick.Manager
             return CreateBestFormation(players, "not simple");
         }
 
-        internal FormationModel CreateBestFormation(List<PlayerDto> players, string method = "Simple")
+        public FormationModel GetBestFormationGeneticAlgorithm(List<PlayerDto> players)
         {
-            var formation = new FormationModel();
+            var tactics = this.GetDefaultTactic();
 
-            var tactics = new List<string>() {
+            FormationModel formation = new FormationModel();
+
+            foreach (var tactic in tactics)
+            {
+                formation.AddPlayer(this.CreatePlayerInPositionRandom(formation, tactic, players));
+            }
+
+            return formation;
+        }
+
+        public FormationModel GetormationRandom(List<PlayerDto> players)
+        {
+            var tactics = this.GetDefaultTactic();
+
+            FormationModel formation = new FormationModel();
+
+            foreach (var tactic in tactics)
+            {
+                formation.AddPlayer(this.CreatePlayerInPositionRandom(formation, tactic, players));
+            }
+
+            return formation;
+        }
+
+        private List<string> GetDefaultTactic()
+        {
+            return new List<string>()
+            {
                 PositionModel.Arquero,
                 PositionModel.DefensaCentral,
-                PositionModel.DefensaLateral,
-                PositionModel.DefensaLateral,
+                PositionModel.DefensaLateralDefensivo,
+                PositionModel.DefensaLateralDefensivo,
                 PositionModel.Mediocampista,
                 PositionModel.Mediocampista,
                 PositionModel.Mediocampista,
@@ -49,6 +84,13 @@ namespace Hattrick.Manager
                 PositionModel.DelanteroDefensivo,
                 PositionModel.DelanteroDefensivo
             };
+        }
+
+        internal FormationModel CreateBestFormation(List<PlayerDto> players, string method = "Simple")
+        {
+            var formation = new FormationModel();
+
+            var tactics = GetDefaultTactic();
 
             if (method.Equals("Simple"))
             {
@@ -56,11 +98,11 @@ namespace Hattrick.Manager
                 {
                     formation.AddPlayer(this.CreateBestPlayerInPosition(formation, tactic, players));
                 }
+
                 return formation;
             }
 
             return CreateBestFormationRound(tactics, players);
-
         }
 
         private FormationModel CreateBestFormationRound(List<string> tactics, List<PlayerDto> players)
@@ -77,16 +119,19 @@ namespace Hattrick.Manager
 
                 if (formation.TeamValue > bestFormation.TeamValue)
                 {
-                    bestFormation = (FormationModel)formation.Clone();
+                    bestFormation = (FormationModel) formation.Clone();
                 }
+
                 string aux = tactics.First();
                 tactics.Remove(aux);
                 tactics.Add(aux);
             }
+
             return bestFormation;
         }
 
-        internal PlayerInPositionModel CreatePlayerInPositionRandom(FormationModel formation, List<string> positionsName, List<PlayerDto> players)
+        internal PlayerInPositionModel CreatePlayerInPositionRandom(FormationModel formation,
+            List<string> positionsName, List<PlayerDto> players)
         {
             PlayerDto playerDto;
             do
@@ -97,13 +142,15 @@ namespace Hattrick.Manager
             return new PlayerInPositionModel(playerDto.Name, GetPositionByName(playerDto, positionsName));
         }
 
-        internal PlayerInPositionModel CreatePlayerInPositionRandom(FormationModel formation, string positionName, List<PlayerDto> players)
+        internal PlayerInPositionModel CreatePlayerInPositionRandom(FormationModel formation, string positionName,
+            List<PlayerDto> players)
         {
-            return this.CreatePlayerInPositionRandom(formation, new List<string> { positionName }, players);
+            return this.CreatePlayerInPositionRandom(formation, new List<string> {positionName}, players);
         }
 
 
-        internal PlayerInPositionModel CreateBestPlayerInPosition(FormationModel formation, string positionName, List<PlayerDto> players)
+        internal PlayerInPositionModel CreateBestPlayerInPosition(FormationModel formation, string positionName,
+            List<PlayerDto> players)
         {
             PlayerDto playerDto;
 
@@ -120,7 +167,8 @@ namespace Hattrick.Manager
                 values.Remove(playerDto);
             } while (!IsNotCreatedYet(playerDto, formation));
 
-            return new PlayerInPositionModel(playerDto.Name, GetPositionByName(playerDto, new List<string> { positionName }));
+            return new PlayerInPositionModel(playerDto.Name,
+                GetPositionByName(playerDto, new List<string> {positionName}));
         }
 
         static internal PositionDto GetPositionByName(PlayerDto playerDto, List<string> positionsName)
@@ -140,10 +188,12 @@ namespace Hattrick.Manager
             {
                 return false;
             }
+
             if (formation.Middfield.Exists(d => d.Name.Equals(player.Name)))
             {
                 return false;
             }
+
             if (formation.Side.Exists(d => d.Name.Equals(player.Name)))
             {
                 return false;

@@ -32,12 +32,11 @@ namespace Hattrick.WebApi
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" }); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); });
 
             services.AddScoped<IAsyncRepository<Player>, PlayerRepository>();
             services.AddScoped<IPlayerManager, PlayerManager>();
-            services.AddScoped<IGeneticManager<PlayerDto>, FormationManager>();
-
+            services.AddScoped<IFormationManager<PlayerDto>, FormationManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -15,6 +15,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hattrick.Selenium\Hattrick.Selenium.csproj" />
+    <ProjectReference Include="..\Hattrick.Repository\Hattrick.Repository.csproj" />
+    <ProjectReference Include="..\Hattrick.Model\Hattrick.Model.csproj" />
+        <ProjectReference Include="..\Hattrick.Manager\Hattrick.Manager.csproj" />
+
   </ItemGroup>
 
 </Project>
